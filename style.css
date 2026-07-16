@@ -1,0 +1,85 @@
+#textbox {
+    width: 90%;
+    height: 942px;
+    padding: 5px;
+    font-size: 50px;
+    background-color: black;
+    color: yellow;
+    border: solid 2px yellow;
+}
+
+#encrypt-decrypt-btn {
+    font-size: 50px;
+    padding: 50px 300px;
+    background-color: #000000;
+    color: yellow;
+    border: solid 3px yellow;
+}
+
+#encrypt-decrypt-btn:active {
+    color: red;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container button {
+margin-top: 2px;
+  width: 50%;
+  font-size: 50px;
+  padding: 40px;
+  background-color: #000000;
+  color: yellow;
+  border: solid 2px yellow;
+}
+
+.button-container button:active {
+    color: red;
+}
+
+.title {
+    text-align: center;
+    font-size: 50px;
+    color: yellow;
+    font-family: Arial;
+    background-color: black;
+    padding: 26px;
+    border: solid 3px yellow;
+}
+
+
+body {
+    background-image: url(bin-system.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+#paste-btn {
+  position: absolute; /* position the button above the textbox */
+  top: 40px; /* adjust as needed */
+  left: 10px; /* adjust as needed */
+  background-color: transparent; /* remove default button styling */
+  border: none; /* remove default button styling */
+  padding: 0; /* remove default button padding */
+}
+
+#paste-btn img {
+  width: 100px; /* adjust as needed */
+  height: 100px; /* adjust as needed */
+}
+
+@media (max-width: 600px) {
+    #textbox {
+        width: 100%;
+        height: 200px;
+        font-size: 16px;
+    }
+    #encrypt-decrypt-btn {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+}
