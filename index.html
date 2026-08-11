@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  
+<link rel="icon" type="image/x-icon" href="Cryptography.ico">
+    <title>Encryption by Alexander Barão</title>
+  
+  
+<link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+
+ document.getElementById("textbox").addEventListener("paste", function(event) {
+      event.preventDefault();
+      var pasteData = event.clipboardData.getData("text");
+      document.getElementById("textbox").value = pasteData;
+    });
+
+
+        function encryptDecrypt() {
+            var text = document.getElementById("textbox").value;
+            var result = "";
+            for (var i = 0; i < text.length; i++) {
+                switch (text[i]) {
+                    // LowerCase
+                    case ' ':
+                        result += " ";
+                        continue;
+                    case '\n':
+                        result += "\n";
+                        continue;
+                    case 'a':
+                        result += ":";
+                        continue;
+                    case 'b':
+                        result += ";";
+                        continue;
+                    case 'c':
+                        result += ".";
+                        continue;
+                    case 'd':
+                        result += ",";
+                        continue;
+                    case 'e':
+                        result += "^";
+                        continue;
+                    case 'f':
+                        result += "_";
+                        continue;
+                    case 'g':
+                        result += "<";
+                        continue;
+                    case 'h':
+                        result += "=";
+                        continue;
+                    case 'i':
+                        result += ">";
+                        continue;
+                    case 'j':
+                        result += "*";
+                        continue;
+                    case 'k':
+                        result += "-";
+                        continue;
+                    case 'l':
+                        result += "+";
+                        continue;
+                    case 'm':
+                        result += "@";
+                        continue;
+                    case 'n':
+                        result += "÷";
+                        continue;
+                    case 'o':
+                        result += "€";
+                        continue;
+                    case 'p':
+                        result += "$";
+                        continue;
+                    case 'q':
+                        result += "!";
+                        continue;
+                    case 'r':
+                        result += '"';
+                        continue;
+                    case 's':
+                        result += "/";
+                        continue;
+                    case 't':
+                        result += "º";
+                        continue;
+                    case 'u':
+                        result += "#";
+                        continue;
+                    case 'v':
+                        result += "?";
+                        continue;
+                    case 'w':
+                        result += "&";
+                        continue;
+                    case 'x':
+                        result += "~";
+                        continue;
+                    case 'y':
+                        result += "[";
+                        continue;
+                    case 'z':
+                        result += "]";
+                        continue;
+                    case 'ç':
+                        result += "%";
+                        continue;
+                    case 'á':
+                        result += ":";
+                        continue;
+                    case 'ã':
+                        result += ":";
+                        continue;
+                    case 'é':
+                        result += "^";
+                        continue;
+                    case 'í':
+                        result += ">";
+                        continue;
+                    case 'ó':
+                        result += "€";
+                        continue;
+                    case 'õ':
+                        result += "€";
+                        continue;
+                    case 'ú':
+                        result += "#";
+                        continue;
+						// UpperCase
+                    case 'A':
+                        result += ":";
+                        continue;
+                    case 'B':
+                        result += ";";
+                        continue;
+                    case 'C':
+                        result += ".";
+                        continue;
+                    case 'D':
+                        result += ",";
+                         continue;
+                    case 'E':
+                         result += "^";
+                          continue;
+                    case 'F':
+                         result += "_";
+                          continue;
+                    case 'G':
+                        result += "<";
+                        continue;
+                    case 'H':
+                        result += "=";
+                        continue;
+                    case 'I':
+                        result += ">";
+                        continue;
+                    case 'J':
+                        result += "*";
+                         continue;
+                    case 'K':
+                         result += "-";
+                          continue;
+                    case 'L':
+                         result += "+";
+                          continue;
+                    case 'M':
+                        result += "@";
+                        continue;
+                    case 'N':
+                        result += "÷";
+                        continue;
+                    case 'O':
+                        result += "€";
+                        continue;
+                    case 'P':
+                        result += "$";
+                         continue;
+                    case 'Q':
+                         result += "!";
+                          continue;
+                    case 'R':
+                         result += '"';
+                          continue;
+                    case 'S':
+                        result += "/";
+                        continue;
+                    case 'T':
+                        result += "º";
+                        continue;
+                    case 'U':
+                        result += "#";
+                        continue;
+                    case 'V':
+                        result += "?";
+                         continue;
+                    case 'W':
+                         result += "&";
+                          continue;
+                    case 'X':
+                         result += "~";
+                          continue;
+                    case 'Y':
+                         result += "[";
+                          continue;
+                    case 'Z':
+                         result += "]";
+                          continue;
+					case 'Ç':
+                         result += "%";
+                          continue;
+                    case 'Á':
+                         result += ":";
+                          continue;
+                    case 'À':
+                         result += ":";
+                          continue;						  
+                    case 'Ã':
+                         result += ":";
+                          continue;
+                    case 'Ä':
+                         result += ":";
+                          continue;	
+                    case 'Â':
+                         result += ":";
+                          continue;
+                    case 'É':
+                         result += "^";
+                          continue;
+                    case 'È':
+                         result += "^";
+                          continue;						  
+                    case 'Ê':
+                         result += "^";
+                          continue;
+                    case 'Ë':
+                         result += "^";
+                          continue;	
+                    case 'Í':
+                         result += ">";
+                          continue;
+                    case 'Ì':
+                         result += ">";
+                          continue;	
+                    case 'Ï':
+                         result += ">";
+                          continue;
+                    case 'Î':
+                         result += ">";
+                          continue;
+                    case 'Ó':
+                         result += "€";
+                          continue;
+                    case 'Ò':
+                         result += "€";
+                          continue;						  
+                    case 'Ô':
+                         result += "€";
+                          continue;
+                    case 'Ö':
+                         result += "€";
+                          continue;	
+                    case 'Õ':
+                         result += "€";	
+                    case 'Ù':
+                         result += "#";
+                          continue;
+                    case 'Û':
+                         result += "#";
+                          continue;
+                    case 'Ü':
+                         result += "#";
+                          continue;
+	                    // Converte Codigo Para Texto
+                    case ':':
+                            result += "a";
+                            continue;
+                    case ';':
+                            result += "b";
+                            continue;
+                    case '.':
+                            result += "c";
+                            continue;
+                    case ',':
+                            result += "d";
+                            continue;
+                    case '^':
+                            result += "e";
+                            continue;
+                    case '_':
+                            result += "f";
+                            continue;
+                    case '<':
+                            result += "g";
+                            continue;
+                    case '=':
+                            result += "h";
+                            continue;
+                    case '>':
+                            result += "i";
+                            continue;
+                    case '*':
+                            result += "j";
+                            continue;
+                    case '-':
+                            result += "k";
+                            continue;
+                    case '+':
+                            result += "l";
+                            continue;
+                    case '@':
+                            result += "m";
+                            continue;
+                    case '÷':
+                            result += "n";
+                            continue;
+                    case '€':
+                            result += "o";
+                            continue;
+                    case '$':
+                            result += "p";
+                            continue;
+                    case '!':
+                            result += "q";
+                            continue;
+                    case '"':
+                            result += "r";
+                            continue;
+                    case '/':
+                            result += "s";
+                            continue;
+                    case 'º':
+                            result += "t";
+                            continue;
+                    case '#':
+                            result += "u";
+                            continue;
+                    case '?':
+                            result += "v";
+                            continue;
+                    case '&':
+                            result += "w";
+                            continue;
+                    case '~':
+                            result += "x";
+                            continue;
+                    case '[':
+                            result += "y";
+                            continue;
+                    case ']':
+                            result += "z";
+                            continue;
+                    case '%':
+                            result += "ç";
+                            continue;
+                        // Numeros
+                    case '0':
+                            result += "0";
+                            continue;
+                    case '1':
+                            result += "1";
+                            continue;
+                    case '2':
+                            result += "2";
+                            continue;
+                    case '3':
+                            result += "3";
+                            continue;
+                    case '4':
+                            result += "4";
+                            continue;
+                    case '5':
+                            result += "5";
+                            continue;
+                    case '6':
+                            result += "6";
+                            continue;
+                    case '7':
+                            result += "7";
+                            continue;
+                    case '8':
+                            result += "8";
+                            continue;
+                    case '9':
+                            result += "9";
+                            continue;					 
+}
+            }
+            document.getElementById("textbox").value = result;
+        }
+
+function copyText(){
+    var text = document.getElementById("textbox").value;
+    var tempInput = document.createElement("input");
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    alert("Text copied successfully!");
+  }
+
+function clearText(){
+    document.getElementById("textbox").value = "";
+  }
+      
+      function pasteFromClipboard() {
+    // Retrieve data from clipboard
+    navigator.clipboard.readText().then(text => {
+        // Paste data into textbox
+        document.getElementById("textbox").value = text;
+    });
+}
+
+    </script>
+
+</head>
+
+<body>
+  <h1 class="title">Encripta o teu Texto Aqui!</h1>
+  
+  <button id="paste-btn" onclick="pasteFromClipboard()">
+    <img src="paste.png" alt="Paste Icon" width="20" height="20">
+</button>
+  
+    <div style="margin-top:200px; text-align: center">
+    <textarea id="textbox" rows="10" cols="50" style="margin: 0 auto;"></textarea>
+</div>
+    <div style="text-align: center">
+        <button id="encrypt-decrypt-btn" onclick="encryptDecrypt()">Encrypt-Decrypt</button>
+    </div>
+
+<div class="button-container">
+      <button id="clear-btn" onclick="clearText()">Clear Text</button>
+    <button id="copy-btn" onclick="copyText()">Copy</button>
+</div>
+
+</body>
+</html>
